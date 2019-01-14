@@ -80,7 +80,7 @@ This project is inspired by the great work [@donohue](https://github.com/donohue
 #### Disadvantages:
 - Not Objective-C compatible.
 - It's not written by Brian, who is a wonderful fella.
-
+- I wrote it so now I get to maintain it. Can't wait to see how that goes. \o/
 
 ## Installation
 You can use [CocoaPods](http://cocoapods.org/) to install `Shortcat` by adding it to your `Podfile`:
