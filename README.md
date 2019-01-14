@@ -51,7 +51,7 @@ A: `self.navigationAndInputKeyCommands` is an array of `UIKeyCommand`s, so feel 
 Something like this should be good for most use cases.
 
 ```swift
-public override var KeyCommands: [UIKeyCommand]? {
+public override var keyCommands: [UIKeyCommand]? {
     let customKeyCommands = [
         UIKeyCommand(input: "t", modifierFlags: .command, action: #selector(openNewTab)),
         UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeWindow)),
