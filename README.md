@@ -16,6 +16,57 @@
 - [ ] Demo gif
 - [ ] Push to CocoaPods
 
+## SHOW ME THE CODE
+
+Ok, calm down Jerry Maguire. That movie is overrated anyway.
+
+```swift
+extension MyVERYEnthusiasticViewController: ShortcutNavigatableTableViewController {
+
+    public override var keyCommands: [UIKeyCommand]? {
+        return self.navigationAndInputKeyCommands
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        self.scrollViewDidEndScrollingAnimationNavigationHandler(scrollView)
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.scrollViewWillBeginDraggingNavigationHandler(scrollView)
+    }
+
+}
+```
+
+## Q&A
+
+**Q: That's it? You get _all_ the keyboard navigation with just a few lines of code?**
+
+A: Yeah, don't you trust me? Why would I lie to you, I don't even know you?
+
+**Q: What if I want to add my own keyboard shortcuts?**
+
+A: `self.navigationAndInputKeyCommands` is an array of `UIKeyCommand`s, so feel free to add your own as you wish.
+
+Something like this should be good for most use cases.
+
+```swift
+public override var KeyCommands: [UIKeyCommand]? {
+	let customKeyCommands = [
+		UIKeyCommand(input: "t", modifierFlags: .command, action: #selector(openNewTab)),
+		UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeWindow)),
+		UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(quitApplication)),
+	]
+
+	return self.navigationKeyCommands + customKeyCommands
+}
+```
+
+**Q: I ran out of questions.**
+
+A: Yeah, I noticed, that's not a question.
+
+
 ## Inspiration
 
 This project is inspired by the great work [@donohue](https://github.com/donohue) did for [IPShortcut](https://github.com/Instapaper/IPShortcut).
