@@ -8,11 +8,11 @@ public protocol ShortcutNavigatableTableViewController: ShortcutNavigatableViewC
 
 extension ShortcutNavigatableTableViewController {
 
-    var keyUpTitle: String {
+    var upArrowKeyCommandTitle: String {
         return NSLocalizedString("Previous Item", comment: "Previous Item")
     }
 
-    var keyDownTitle: String {
+    var downArrowKeyCommandTitle: String {
         return NSLocalizedString("Next Item", comment: "Next Item")
     }
 
@@ -38,37 +38,40 @@ extension ShortcutNavigatableTableViewController {
 
 extension ShortcutNavigatableTableViewController where Self: UIViewController {
 
-    var navigationKeyCommands: [UIKeyCommand] {
-        return [
-            UIKeyCommand(
-                input: " ",
-                modifierFlags: .shift,
-                action: #selector(self.tableView_pageUp),
-                discoverabilityTitle: self.pageUpTitle
-            ),
+    var upArrowKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: UIKeyCommand.inputUpArrow,
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._tableViewKeyUp),
+            discoverabilityTitle: self.upArrowKeyCommandTitle
+        )
+    }
 
-            UIKeyCommand(
-                input: " ",
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.tableView_pageDown),
-                discoverabilityTitle: self.pageDownTitle
-            ),
+    var downArrowKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: UIKeyCommand.inputDownArrow,
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._tableViewKeyDown),
+            discoverabilityTitle: self.downArrowKeyCommandTitle
+        )
+    }
 
-            UIKeyCommand(
-                input: UIKeyCommand.inputUpArrow,
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.tableView_keyUp),
-                discoverabilityTitle: self.keyUpTitle
-            ),
+    var pageUpKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: " ",
+            modifierFlags: .shift,
+            action: #selector(self._tableViewPageUp),
+            discoverabilityTitle: self.pageUpKeyCommandTitle
+        )
+    }
 
-            UIKeyCommand(
-                input: UIKeyCommand.inputDownArrow,
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.tableView_keyDown),
-                discoverabilityTitle: self.keyDownTitle
-            ),
-        ]
-
+    var pageDownKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: " ",
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._tableViewPageDown),
+            discoverabilityTitle: self.pageDownKeyCommandTitle
+        )
     }
 
     var enterKeyCommand: UIKeyCommand {
@@ -78,6 +81,15 @@ extension ShortcutNavigatableTableViewController where Self: UIViewController {
             action: #selector(self.tableView_keyEnter),
             discoverabilityTitle: self.enterTitle
         )
+    }
+
+    var navigationKeyCommands: [UIKeyCommand] {
+        return [
+            self.upArrowKeyCommand,
+            self.downArrowKeyCommand,
+            self.pageUpKeyCommand,
+            self.pageDownKeyCommand
+        ]
     }
 
     var navigationAndInputKeyCommands: [UIKeyCommand] {
@@ -97,7 +109,7 @@ private extension UIViewController {
     }
 
     @objc
-    func tableView_keyUp() {
+    func _tableViewKeyUp() {
         guard let self = self as? (UIViewController & ShortcutNavigatableTableViewController) else { return }
         guard !self.isScrolling else { return }
         guard let lastVisibleIndexPath = self.tableView.lastCompletelyVisibleIndexPath else { return }
@@ -123,7 +135,7 @@ private extension UIViewController {
     }
 
     @objc
-    func tableView_keyDown() {
+    func _tableViewKeyDown() {
         guard let self = self as? (UIViewController & ShortcutNavigatableTableViewController) else { return }
         guard !self.isScrolling else { return }
 
@@ -150,7 +162,7 @@ private extension UIViewController {
     }
 
     @objc
-    func tableView_pageUp() {
+    func _tableViewPageUp() {
         guard let self = self as? ShortcutNavigatableTableViewController else { return }
         guard let firstCompletelyVisibleIndexPath = self.tableView.firstCompletelyVisibleIndexPath else { return }
 
@@ -159,7 +171,7 @@ private extension UIViewController {
     }
 
     @objc
-    func tableView_pageDown() {
+    func _tableViewPageDown() {
         guard let self = self as? ShortcutNavigatableTableViewController else { return }
         guard let lastCompletelyVisibleIndexPath = self.tableView.lastCompletelyVisibleIndexPath else { return }
 

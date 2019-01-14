@@ -4,20 +4,20 @@ public protocol ShortcutNavigatableViewController: class {
 
     var isScrolling: Bool { get set }
 
-    var keyUpTitle: String { get }
-    var keyDownTitle: String { get }
-    var pageUpTitle: String { get }
-    var pageDownTitle: String { get }
+    var upArrowKeyCommandTitle: String { get }
+    var downArrowKeyCommandTitle: String { get }
+    var pageUpKeyCommandTitle: String { get }
+    var pageDownKeyCommandTitle: String { get }
 
 }
 
 extension ShortcutNavigatableViewController {
 
-    var pageUpTitle: String {
+    var pageUpKeyCommandTitle: String {
         return NSLocalizedString("Page Up", comment: "Page Up")
     }
 
-    var pageDownTitle: String {
+    var pageDownKeyCommandTitle: String {
         return NSLocalizedString("Page Down", comment: "Page Down")
     }
 

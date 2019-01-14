@@ -24,35 +24,48 @@ extension ShortcutNavigatableScrollViewController {
 
 extension ShortcutNavigatableScrollViewController where Self: UIViewController {
 
+    var upArrowKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: UIKeyCommand.inputUpArrow,
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._scrollViewKeyUp),
+            discoverabilityTitle: self.upArrowKeyCommandTitle
+        )
+    }
+
+    var downArrowKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: UIKeyCommand.inputDownArrow,
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._scrollViewKeyDown),
+            discoverabilityTitle: self.downArrowKeyCommandTitle
+        )
+    }
+
+    var pageUpKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: " ",
+            modifierFlags: .shift,
+            action: #selector(self._scrollViewPageUp),
+            discoverabilityTitle: self.pageUpKeyCommandTitle
+        )
+    }
+
+    var pageDownKeyCommand: UIKeyCommand {
+        return UIKeyCommand(
+            input: " ",
+            modifierFlags: UIKeyModifierFlags(rawValue: 0),
+            action: #selector(self._scrollViewPageDown),
+            discoverabilityTitle: self.pageDownKeyCommandTitle
+        )
+    }
+
     var navigationKeyCommands: [UIKeyCommand] {
         return [
-            UIKeyCommand(
-                input: " ",
-                modifierFlags: .shift,
-                action: #selector(self.scrollView_pageUp),
-                discoverabilityTitle: self.pageUpTitle
-            ),
-
-            UIKeyCommand(
-                input: " ",
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.scrollView_pageDown),
-                discoverabilityTitle: self.pageDownTitle
-            ),
-
-            UIKeyCommand(
-                input: UIKeyCommand.inputUpArrow,
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.scrollView_keyUp),
-                discoverabilityTitle: self.keyUpTitle
-            ),
-
-            UIKeyCommand(
-                input: UIKeyCommand.inputDownArrow,
-                modifierFlags: UIKeyModifierFlags(rawValue: 0),
-                action: #selector(self.scrollView_keyDown),
-                discoverabilityTitle: self.keyDownTitle
-            ),
+            self.upArrowKeyCommand,
+            self.downArrowKeyCommand,
+            self.pageUpKeyCommand,
+            self.pageDownKeyCommand
         ]
     }
 
@@ -69,7 +82,7 @@ private extension UIViewController {
     }
 
     @objc
-    func scrollView_keyUp() {
+    func _scrollViewKeyUp() {
         guard let self = self as? ShortcutNavigatableScrollViewController else { return }
 
         let yOffset = Swift.max(self.scrollView.contentOffset.y - scrollArrowHeight, 0)
@@ -77,7 +90,7 @@ private extension UIViewController {
     }
 
     @objc
-    func scrollView_keyDown() {
+    func _scrollViewKeyDown() {
         guard let self = self as? ShortcutNavigatableScrollViewController else { return }
 
         let yOffset = Swift.min(self.scrollView.contentOffset.y + scrollArrowHeight, self.scrollView.contentSize.height - self.scrollView.frame.size.height)
@@ -85,7 +98,7 @@ private extension UIViewController {
     }
 
     @objc
-    func scrollView_pageUp() {
+    func _scrollViewPageUp() {
         guard let self = self as? ShortcutNavigatableScrollViewController else { return }
 
         let yOffset = Swift.max(self.scrollView.contentOffset.y - self.scrollView.frame.size.height + scrollWithinPageMargin, 0)
@@ -93,7 +106,7 @@ private extension UIViewController {
     }
 
     @objc
-    func scrollView_pageDown() {
+    func _scrollViewPageDown() {
         guard let self = self as? ShortcutNavigatableScrollViewController else { return }
 
         let yOffset = Swift.min(self.scrollView.contentOffset.y + self.scrollView.frame.size.height - scrollWithinPageMargin, self.scrollView.contentSize.height - self.scrollView.frame.size.height)
