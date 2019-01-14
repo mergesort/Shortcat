@@ -52,13 +52,13 @@ Something like this should be good for most use cases.
 
 ```swift
 public override var KeyCommands: [UIKeyCommand]? {
-	let customKeyCommands = [
-		UIKeyCommand(input: "t", modifierFlags: .command, action: #selector(openNewTab)),
-		UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeWindow)),
-		UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(quitApplication)),
-	]
+    let customKeyCommands = [
+        UIKeyCommand(input: "t", modifierFlags: .command, action: #selector(openNewTab)),
+        UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeWindow)),
+        UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(quitApplication)),
+    ]
 
-	return self.navigationKeyCommands + customKeyCommands
+    return self.navigationKeyCommands + customKeyCommands
 }
 ```
 
