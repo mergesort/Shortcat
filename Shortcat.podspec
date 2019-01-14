@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'Shortcat'
-  spec.summary      = 'Navigate scroll views with cat-like agility. 🐱'
+  spec.summary      = 'Navigate UITableViews, UICollectionViews, and UIScrollViews with cat-like agility. 🐱'
   spec.version      = '1.0'
   spec.license      = { :type => 'MIT' }
   spec.authors      =  { 'Joe Fabisevich' => 'github@fabisevi.ch' }
