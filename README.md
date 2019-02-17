@@ -9,7 +9,7 @@
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg) 
 ![Plaform](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)
 
-![](example/shortcat_demo.gif)
+![](Example/shortcat_demo.gif)
 
 ## SHOW ME THE CODE
 
