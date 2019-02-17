@@ -11,12 +11,15 @@
 		7076D95121E53DFA00C8302D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7076D94F21E53DFA00C8302D /* Main.storyboard */; };
 		7076D95321E53DFA00C8302D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7076D95221E53DFA00C8302D /* Assets.xcassets */; };
 		7076D95621E53DFA00C8302D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7076D95421E53DFA00C8302D /* LaunchScreen.storyboard */; };
+		B702C7E52219D47D008FEC36 /* ExampleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702C7E42219D47D008FEC36 /* ExampleCollectionViewController.swift */; };
 		B730D2E721EBFFE100C2A753 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2E621EBFFE100C2A753 /* ExampleTableViewController.swift */; };
+		B730D2F121EC083B00C2A753 /* UICollectionView+Shortcat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */; };
 		B730D2F221EC083B00C2A753 /* UITableView+Shortcat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */; };
 		B730D2F321EC083B00C2A753 /* ShortcutNavigatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */; };
 		B730D2F421EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EE21EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift */; };
 		B730D2F521EC083B00C2A753 /* ShortcutNavigatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EF21EC083B00C2A753 /* ShortcutNavigatableViewController.swift */; };
 		B730D2F621EC083B00C2A753 /* ShortcutNavigatableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2F021EC083B00C2A753 /* ShortcutNavigatableTableViewController.swift */; };
+		B730D2F821EC0A3100C2A753 /* ShortcutNavigatableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2F721EC0A3100C2A753 /* ShortcutNavigatableCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +29,15 @@
 		7076D95221E53DFA00C8302D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7076D95521E53DFA00C8302D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7076D95721E53DFA00C8302D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B702C7E42219D47D008FEC36 /* ExampleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewController.swift; sourceTree = "<group>"; };
 		B730D2E621EBFFE100C2A753 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Shortcat.swift"; sourceTree = "<group>"; };
 		B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Shortcat.swift"; sourceTree = "<group>"; };
 		B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableView.swift; sourceTree = "<group>"; };
 		B730D2EE21EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableScrollViewController.swift; sourceTree = "<group>"; };
 		B730D2EF21EC083B00C2A753 /* ShortcutNavigatableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableViewController.swift; sourceTree = "<group>"; };
 		B730D2F021EC083B00C2A753 /* ShortcutNavigatableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableTableViewController.swift; sourceTree = "<group>"; };
+		B730D2F721EC0A3100C2A753 /* ShortcutNavigatableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortcutNavigatableCollectionViewController.swift; path = ../../../ShortcutNavigatableCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				7076D94B21E53DFA00C8302D /* AppDelegate.swift */,
+				B702C7E42219D47D008FEC36 /* ExampleCollectionViewController.swift */,
 				B730D2E621EBFFE100C2A753 /* ExampleTableViewController.swift */,
 				7076D94F21E53DFA00C8302D /* Main.storyboard */,
 				7076D95221E53DFA00C8302D /* Assets.xcassets */,
@@ -88,6 +95,7 @@
 		B730D2E921EC083B00C2A753 /* ShortcutNavigatableViews */ = {
 			isa = PBXGroup;
 			children = (
+				B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */,
 				B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */,
 				B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */,
 			);
@@ -100,6 +108,7 @@
 				B730D2EE21EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift */,
 				B730D2EF21EC083B00C2A753 /* ShortcutNavigatableViewController.swift */,
 				B730D2F021EC083B00C2A753 /* ShortcutNavigatableTableViewController.swift */,
+				B730D2F721EC0A3100C2A753 /* ShortcutNavigatableCollectionViewController.swift */,
 			);
 			path = ShortcutNavigatableViewControllers;
 			sourceTree = "<group>";
@@ -176,12 +185,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B730D2F621EC083B00C2A753 /* ShortcutNavigatableTableViewController.swift in Sources */,
+				B730D2F821EC0A3100C2A753 /* ShortcutNavigatableCollectionViewController.swift in Sources */,
 				B730D2E721EBFFE100C2A753 /* ExampleTableViewController.swift in Sources */,
+				B702C7E52219D47D008FEC36 /* ExampleCollectionViewController.swift in Sources */,
 				B730D2F321EC083B00C2A753 /* ShortcutNavigatableView.swift in Sources */,
 				B730D2F221EC083B00C2A753 /* UITableView+Shortcat.swift in Sources */,
 				B730D2F521EC083B00C2A753 /* ShortcutNavigatableViewController.swift in Sources */,
 				7076D94C21E53DFA00C8302D /* AppDelegate.swift in Sources */,
 				B730D2F421EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift in Sources */,
+				B730D2F121EC083B00C2A753 /* UICollectionView+Shortcat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,11 +9,11 @@ public protocol ShortcutNavigatableTableViewController: ShortcutNavigatableViewC
 extension ShortcutNavigatableTableViewController {
 
     var upArrowKeyCommandTitle: String {
-        return NSLocalizedString("Previous Item", comment: "Previous Item")
+        return NSLocalizedString("Previous Row", comment: "Previous Row")
     }
 
     var downArrowKeyCommandTitle: String {
-        return NSLocalizedString("Next Item", comment: "Next Item")
+        return NSLocalizedString("Next Row", comment: "Next Row")
     }
 
     var enterTitle: String {
@@ -78,7 +78,7 @@ extension ShortcutNavigatableTableViewController where Self: UIViewController {
         return UIKeyCommand(
             input: "\r",
             modifierFlags: UIKeyModifierFlags(rawValue: 0),
-            action: #selector(self.tableView_keyEnter),
+            action: #selector(self._tableViewKeyEnter),
             discoverabilityTitle: self.enterTitle
         )
     }
@@ -101,7 +101,7 @@ extension ShortcutNavigatableTableViewController where Self: UIViewController {
 private extension UIViewController {
 
     @objc
-    func tableView_keyEnter() {
+    func _tableViewKeyEnter() {
         guard let self = self as? ShortcutNavigatableTableViewController else { return }
         guard let selectedIndexPath = self.tableView.firstSelectedIndexPath else { return }
 

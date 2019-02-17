@@ -1,6 +1,6 @@
 import UIKit
 
-class ExampleTableViewController: UIViewController {
+final class ExampleTableViewController: UIViewController {
 
     private static let reuseIdentifier = "reuseIdentifier"
 

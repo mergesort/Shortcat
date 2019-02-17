@@ -3,6 +3,7 @@ import UIKit
 public protocol ShortcutNavigatableScrollViewController: ShortcutNavigatableViewController {
 
     var scrollView: UIScrollView { get }
+    var navigationKeyCommands: [UIKeyCommand] { get }
 
 }
 
