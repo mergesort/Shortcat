@@ -12,7 +12,6 @@
 		7076D95321E53DFA00C8302D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7076D95221E53DFA00C8302D /* Assets.xcassets */; };
 		7076D95621E53DFA00C8302D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7076D95421E53DFA00C8302D /* LaunchScreen.storyboard */; };
 		B730D2E721EBFFE100C2A753 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2E621EBFFE100C2A753 /* HomeViewController.swift */; };
-		B730D2F121EC083B00C2A753 /* UICollectionView+Shortcat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */; };
 		B730D2F221EC083B00C2A753 /* UITableView+Shortcat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */; };
 		B730D2F321EC083B00C2A753 /* ShortcutNavigatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */; };
 		B730D2F421EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730D2EE21EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift */; };
@@ -28,7 +27,6 @@
 		7076D95521E53DFA00C8302D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7076D95721E53DFA00C8302D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B730D2E621EBFFE100C2A753 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Shortcat.swift"; sourceTree = "<group>"; };
 		B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Shortcat.swift"; sourceTree = "<group>"; };
 		B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableView.swift; sourceTree = "<group>"; };
 		B730D2EE21EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutNavigatableScrollViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		B730D2E921EC083B00C2A753 /* ShortcutNavigatableViews */ = {
 			isa = PBXGroup;
 			children = (
-				B730D2EA21EC083B00C2A753 /* UICollectionView+Shortcat.swift */,
 				B730D2EB21EC083B00C2A753 /* UITableView+Shortcat.swift */,
 				B730D2EC21EC083B00C2A753 /* ShortcutNavigatableView.swift */,
 			);
@@ -185,7 +182,6 @@
 				B730D2F521EC083B00C2A753 /* ShortcutNavigatableViewController.swift in Sources */,
 				7076D94C21E53DFA00C8302D /* AppDelegate.swift in Sources */,
 				B730D2F421EC083B00C2A753 /* ShortcutNavigatableScrollViewController.swift in Sources */,
-				B730D2F121EC083B00C2A753 /* UICollectionView+Shortcat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
