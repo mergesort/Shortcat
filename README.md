@@ -1,6 +1,6 @@
 # Shortcat
 
-#### Navigate UITableViews, UICollectionViews, and UIScrollViews with cat-like agility. For once you'll be thrilled to have a cat on your keyboard. 🐱
+#### Navigate UITableViews with cat-like agility. For once you'll be thrilled to have a cat on your keyboard. 🐱
 
 ---
 
@@ -11,7 +11,6 @@
 
 ## Todo
 
-- [ ] Finish UICollectionView support
 - [ ] A better README
 - [ ] Demo gif
 - [ ] Push to CocoaPods
