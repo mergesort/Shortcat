@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class ExampleTableViewController: UIViewController {
 
     private static let reuseIdentifier = "reuseIdentifier"
 
@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension ExampleTableViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected \(indexPath.section) : \(indexPath.row)")
@@ -28,7 +28,7 @@ extension HomeViewController: UITableViewDelegate {
 
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension ExampleTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
@@ -39,7 +39,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewController.reuseIdentifier) else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExampleTableViewController.reuseIdentifier) else { fatalError() }
         cell.textLabel?.text = "Row \(indexPath.row)"
 
         return cell
@@ -47,7 +47,7 @@ extension HomeViewController: UITableViewDataSource {
 
 }
 
-extension HomeViewController: ShortcutNavigatableTableViewController {
+extension ExampleTableViewController: ShortcutNavigatableTableViewController {
 
     public override var keyCommands: [UIKeyCommand]? {
         return self.navigationAndInputKeyCommands
@@ -63,7 +63,7 @@ extension HomeViewController: ShortcutNavigatableTableViewController {
 
 }
 
-private extension HomeViewController {
+private extension ExampleTableViewController {
 
     func setup() {
         self.navigationItem.title = "Shortcat 🐱"
@@ -71,7 +71,7 @@ private extension HomeViewController {
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: HomeViewController.reuseIdentifier)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: ExampleTableViewController.reuseIdentifier)
 
         self.setupConstraints()
     }
